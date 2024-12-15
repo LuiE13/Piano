@@ -1,0 +1,122 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+    color: #fff;
+}
+
+.container{
+    width: 780px;
+    border-radius: 20px;
+    padding: 35px 40px;
+    background-color: #000;
+}
+
+header{
+    color: #b2b2b2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2{
+    font-size: 1.6rem;
+}
+
+header .collum{
+    display: flex;
+    align-items: center;
+}
+
+header .collum span{
+    margin-right: 15px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.volumeSlider input{
+    accent-color: #fff;
+}
+
+.keysCheck input{
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #4b4b4b;
+    cursor: pointer;
+    position: relative;
+}
+
+.keysCheck input::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: inherit;
+    background-color: #8c8c8c;
+    position: absolute;
+    left: .3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+}
+
+.keysCheck input:checked::before{
+    background-color: #fff;
+    left: 2.1rem;
+}
+
+.pianoKeys{
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.key{
+    cursor: pointer;
+    list-style: none;
+    color: #a2a2a2;
+    user-select: none;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.white{
+    width: 70px;
+    height: 230px;
+    border-radius: 8px;
+    background: linear-gradient(#fff 96%,#eee 4%);
+}
+
+.black{
+    width: 44px;
+    height: 140px;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+    margin: 0 -22px 0 -22px;
+    background: linear-gradient(#333,#000 );
+}
+
+.key span{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.pianoKeys .white.active {
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #fff 0%, #eee 100%);
+  }
+  
+  .pianoKeys .black.active {
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom #000, #434343);
+  }
+  
+  .pianoKeys .key.hide span {
+    display: none;
+  }
